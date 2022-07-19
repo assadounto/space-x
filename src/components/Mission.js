@@ -27,7 +27,7 @@ const Mission = (props) => {
             <div className="mission-name">{mission_name}</div>
             <div className="mission-description">{description}</div>
             <div className="status-button"><button type="button">NOT A MEMBER</button></div>
-            <div classNname="join-button">{joined ? <div className='joined' onClick={handleCancel}>Leave Mission</div> : <div className='join-mission' onClick={handleclick}>Join Mission</div>}</div>
+            <div className="join-button">{joined ? <div className='joined' onClick={handleCancel}>Leave Mission</div> : <div className='join-mission' onClick={handleclick}>Join Mission</div>}</div>
         </div>
     )
 
