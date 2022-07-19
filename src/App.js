@@ -6,7 +6,6 @@ import Rockets from './components/RocketList';
 function App() {
     return(
       <>
-     
         <Header/> 
         <Routes>
           <Route path="/" element={<Rockets />} />
@@ -14,7 +13,6 @@ function App() {
           <Route path="/my-profiles" element={<h1>My Profile</h1>} />
         </Routes>
       </>
-    
     )
 }
 let b =bookService.getRockets().then(res=>res.data).then(data=>data.map((key) => ({

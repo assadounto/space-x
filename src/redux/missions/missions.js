@@ -1,69 +1,60 @@
-import bookService from "../../services/services";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-export const GET_MISSIONS = 'SPACE-TRAVELLERS/MISSION/GET_MISSIONS';
-export const JOIN_MISSIONS = 'SPACE-TRAVELLERS/MISSION/JOIN_MISSIONS';
-export const LEAVE_MISSIONS = 'SPACE-TRAVELLERS/MISSION/LEAVE_MISSIONS';
-
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import bookService from '../../services/services';
 
 const initialStateMission = {
     isLoading: false,
     isFailed: false,
-    items: [],
+  items: [],
 };
 
-export const getMissionsAction = (createAsyncThunk) => async(dispatch) => {
+export const getMissions = createAsyncThunk(
+  'missions/getMissions',
+  async () => {
     const { data } = await bookService.getMission();
-    const missionArray = [];
-    data.map((mission) => {
-        missionArray.push({
-            missionID: mission.mission_id,
-            missionName: mission.mission_name,
-            missionDescription: mission.mission_description,
-        });
-        dispatch({
-            type: GET_MISSIONS,
-            payload: missionArray,
-        });
-    });
-};
+    return data;
+  },
+);
 
-export const joinMissionAction = (payload) => ({
-    type: JOIN_MISSIONS,
-    payload,
+
+const missions = createSlice({
+  name: 'missions',
+  initialStateMission,
+  reducers: {
+    JOIN_MISSION(state, action) {
+        const newState = state.items.map(mission => {
+            if(mission.mission_id!== action.payload) 
+                return mission;
+            return { ...mission, joined: true };
+        });
+
+        state.items = newState;
+    },
+    LEAVE_MISSION(state, action) {
+        const newState = state.items.map(mission => {
+            if(mission.mission_id !== action.payload) 
+                return mission;
+            return { ...mission, joined:false };
+        });
+        state.items = newState;
+    },
+  },
+  extraReducers: {
+    [getMissions.fulfilled]: (state, action) => {
+      const missions = (action.payload).map( (key) => ({
+        mission_name: key.mission_name,
+        mission_id: key.mission_id,
+        description: key.description, 
+        joined:false 
+      }))
+      const thestate = state;
+      thestate.isLoading = false;
+      thestate.items = missions;
+    },
+    [getMissions.pending]: (state) => { const thestate = state; thestate.isLoading = true; },
+    [getMissions.rejected]: (state) => { const thestate = state; thestate.isFailed = true; },
+  },
 });
 
-export const leaveMissionAction = (payload) => ({
-    type: LEAVE_MISSIONS,
-    payload,
-});
+export const { JOIN_MISSION, LEAVE_MISSION } = missions.actions;
 
-const missionRducer = (state = initialStateMission.items, action) => {
-    switch (action.type) {
-        case GET_MISSIONS:
-            return action.payload;
-        case JOIN_MISSIONS:
-            return state.map((mission) => {
-                if (mission.missionID === action.payload.missionID) {
-                    return {
-                        ...mission,
-                        isJoined: true,
-                    };
-                }
-                return mission;
-            });
-        case LEAVE_MISSIONS:
-            return state.map((mission) => {
-                if (mission.missionID === action.payload.missionID) {
-                    return {
-                        ...mission,
-                        isJoined: false,
-                    };
-                }
-                return mission;
-            });
-            default:
-                return state;
-    };
-};
-
-export default missionRducer;
+export default missions.reducer;
