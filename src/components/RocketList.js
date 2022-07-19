@@ -15,7 +15,7 @@ const Rockets = () => {
       <div className="rockets">
         {
         rocket.isFailed
-          ? <div>Loading Faild</div>
+          ? <div>Loading Failed</div>
           : (
             <>
               {
