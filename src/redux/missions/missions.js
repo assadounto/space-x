@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import bookService from '../../services/services';
 
-const initialStateMission = {
+const initialState = {
     isLoading: false,
     isFailed: false,
   items: [],
@@ -18,7 +18,7 @@ export const getMission = createAsyncThunk(
 
 const missions = createSlice({
   name: 'missions',
-  initialStateMission,
+  initialState,
   reducers: {
     JOIN_MISSION(state, action) {
         const newState = state.items.map(mission => {

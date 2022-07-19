@@ -5,7 +5,6 @@ import Mission from "./Mission";
 
 const Missions = () => {
     const mission = useSelector((state) => state.missions);
-    console.log(mission);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getMission());
