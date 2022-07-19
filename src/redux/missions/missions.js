@@ -7,8 +7,8 @@ const initialStateMission = {
   items: [],
 };
 
-export const getMissions = createAsyncThunk(
-  'missions/getMissions',
+export const getMission = createAsyncThunk(
+  'missions/getMission',
   async () => {
     const { data } = await bookService.getMission();
     return data;
@@ -39,7 +39,7 @@ const missions = createSlice({
     },
   },
   extraReducers: {
-    [getMissions.fulfilled]: (state, action) => {
+    [getMission.fulfilled]: (state, action) => {
       const missions = (action.payload).map( (key) => ({
         mission_name: key.mission_name,
         mission_id: key.mission_id,
@@ -48,10 +48,11 @@ const missions = createSlice({
       }))
       const thestate = state;
       thestate.isLoading = false;
+      thestate.isFailed = false;
       thestate.items = missions;
     },
-    [getMissions.pending]: (state) => { const thestate = state; thestate.isLoading = true; },
-    [getMissions.rejected]: (state) => { const thestate = state; thestate.isFailed = true; },
+    [getMission.pending]: (state) => { const thestate = state; thestate.isLoading = true; },
+    [getMission.rejected]: (state) => { const thestate = state; thestate.isFailed = true; },
   },
 });
 
