@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMission } from "../redux/missions/missions";
 import Mission from "./Mission";
+import './Missionlist.css';
 
 const Missions = () => {
     const mission = useSelector((state) => state.missions);
@@ -12,9 +13,9 @@ const Missions = () => {
     return (
         <div className="mission-container">
             <div className="headings">
-                <div className="mission-name"><h4>Mission</h4></div>
-                <div className="mission-description"><h4>description</h4></div>
-                <div className="mission-status"><h4>status</h4></div>
+                <div className="mission-name"><h3>Mission</h3></div>
+                <div className="mission-description"><h3>description</h3></div>
+                <div className="mission-status"><h3>status</h3></div>
                 <div className="mission-blank"></div>
             </div>
             <div className="mission-items">
