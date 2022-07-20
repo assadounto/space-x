@@ -3,9 +3,10 @@
 # Space-Travelers-Hub
 
 This is react app that allows users to book missions and reserve rockets .
-### Live Demo Links
-[Herokuapp]()
-[Netlify]()
+
+### Deploy
+
+[Link](travelers-hub-rich-shubh.netlify.app)
 
 <!-- ![screenshot](./desktop.png) -->
 
