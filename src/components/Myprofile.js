@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux/es/exports';
+import './MyProfile.css';
 
 const Myprofile = () => {
   const user = useSelector((state) => state.rockets);
@@ -8,25 +9,25 @@ const Myprofile = () => {
   const myprofile = user.items.filter((item) => item.reserved === true);
   return (
     <div className="myprofile">
-      <h2>My Rockets</h2>
-      { myprofile.map(({
-        rocketName, id,
-      }) => (
-        <div className="myprofile-cont" key={id}>
+      <div className="my-profile-rocket-section">
+        <h2 className="rocket-profile-headline">My Rockets</h2>
+        { myprofile.map(({
+          rocketName, id,
+        }) => (
+          <div className="myprofile-cont" key={id}>
 
-          <div className="profile-name">{rocketName}</div>
-        </div>
-      ))}
+            <div className="profile-name">{rocketName}</div>
+          </div>
+        ))}
+      </div>
 
-      <div className="my-profile-section">
+      <div className="my-profile-mission-section">
         <h2>My Missions</h2>
-        <div className="myprofile-cont">
-          {reservedMissions.length > 0 && reservedMissions.map((mission) => (
-            <div key={mission.mission_id}>
-              <p>{mission.mission_name}</p>
-            </div>
-          ))}
-        </div>
+        {reservedMissions.length > 0 && reservedMissions.map((mission) => (
+          <div className="myprofile-cont" key={mission.missionId}>
+            <p className="profile-name">{mission.missionName}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

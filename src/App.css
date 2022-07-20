@@ -1,9 +1,9 @@
 .header {
   display: flex;
   flex-direction: row;
-  width: 95%;
   margin: auto;
   padding: 1rem;
+  background: linear-gradient(to right, rgba(203, 203, 199, 0.417) 0%, #c9eeca 100%);
 }
 
 .Cont {
@@ -29,11 +29,12 @@ img {
 
 .profile-name {
   border: 1px solid #a8a0a0;
-  width: 40%;
+  width: 90%;
   height: 60px;
   font-size: 30px;
   font-weight: bold;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
 
 .rocket-cont {
@@ -96,5 +97,10 @@ img {
 
 .nav-item {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
+  margin-top: 10px;
+}
+
+hr {
+  margin-top: 0;
 }
