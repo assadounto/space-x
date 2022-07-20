@@ -6,7 +6,7 @@ This is react app that allows users to book missions and reserve rockets .
 
 ### Deploy
 
-[Link](travelers-hub-rich-shubh.netlify.app)
+[Link](https://travelers-hub-rich-shubh.netlify.app)
 
 <!-- ![screenshot](./desktop.png) -->
 
