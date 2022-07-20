@@ -15,7 +15,7 @@ const Mission = (props) => {
     };
 
     const handleclick = () => {
-        dispatch(JOIN_MISSION(mission_id));
+       dispatch(JOIN_MISSION({mission_id}));
     };
 
     const handleCancel = () => {
@@ -26,8 +26,8 @@ const Mission = (props) => {
         <div className="mission-content" key={mission_id}>
             <div className="mission-name">{mission_name}</div>
             <div className="mission-description">{description}</div>
-            <div className="status-button"><button type="button">NOT A MEMBER</button></div>
-            <div className="join-button">{joined ? <div className='joined' onClick={handleCancel}>Leave Mission</div> : <div className='join-mission' onClick={handleclick}>Join Mission</div>}</div>
+            <div className="status-button">{joined ? <h5>Active Member</h5> : <h5>NOT A MEMBER</h5>}</div>
+            <div className="join-button">{joined ? <button type="button" className='joined' onClick={handleCancel}>Leave Mission</button> : <button type="button" className='join-mission' onClick={handleclick}>Join Mission</button>}</div>
         </div>
     )
 
