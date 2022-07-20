@@ -1,13 +1,10 @@
-
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux/es/exports';
-import { RESERVE,CANCEL } from '../redux/rockets/rockets';
-
-
+import { RESERVE, CANCEL } from '../redux/rockets/rockets';
 
 function Rocket(props) {
   const {
-    rocket_name,id, description, flickr_images,reserved
+    rocket_name, id, description, flickr_images, reserved,
   } = props;
   const dispatch = useDispatch();
   Rocket.propTypes = {
@@ -15,15 +12,15 @@ function Rocket(props) {
     rocket_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     flickr_images: PropTypes.array.isRequired,
-    reserved:PropTypes.bool.isRequired
+    reserved: PropTypes.bool.isRequired,
   };
-  
+
   function handleclick() {
-   dispatch(RESERVE(id))
+    dispatch(RESERVE(id));
   }
   function handleCancel() {
-    dispatch(CANCEL(id))
-   }
+    dispatch(CANCEL(id));
+  }
 
   return (
     <div className="rocket-cont" key={id}>

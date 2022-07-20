@@ -4,8 +4,9 @@
   width: 95%;
   margin: auto;
 }
+
 .Cont {
-margin-left: auto;
+  margin-left: auto;
   display: flex;
   gap: 20px;
 }

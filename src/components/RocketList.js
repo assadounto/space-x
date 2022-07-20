@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRockets } from '../redux/rockets/rockets';
@@ -26,7 +25,7 @@ const Rockets = () => {
                   ? <div>Loading...</div>
 
                   : rocket.items.map(({
-                    rocket_name, id, description, flickr_images,reserved
+                    rocket_name, id, description, flickr_images, reserved,
                   }) => (
                     <Rocket
                       key={id}
