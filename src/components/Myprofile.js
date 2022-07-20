@@ -1,5 +1,9 @@
 import { useSelector } from 'react-redux/es/exports';
+<<<<<<< HEAD
 import { NavLink } from 'react-router-dom';
+=======
+import './MyProfile.css';
+>>>>>>> 8265633233e70b4434783a2a3d90275f5468ca12
 
 const Myprofile = () => {
   const user = useSelector((state) => state.rockets);
@@ -9,18 +13,9 @@ const Myprofile = () => {
   const myprofile = user.items.filter((item) => item.reserved === true);
   return (
     <div className="myprofile">
-      <h2>My Rockets</h2>
-      {myprofile.length === 0 ? (
-        <div className="Info">
-          You have no Reserved Rockets.
-          To Reserve a rocket click
-          {' '}
-          <NavLink to="/">here</NavLink>
-          {' '}
-          and check back here.
-        </div>
-      )
-        : myprofile.map(({
+      <div className="my-profile-rocket-section">
+        <h2 className="rocket-profile-headline">My Rockets</h2>
+        { myprofile.map(({
           rocketName, id,
         }) => (
           <div className="myprofile-cont" key={id}>
@@ -28,16 +23,15 @@ const Myprofile = () => {
             <div className="profile-name">{rocketName}</div>
           </div>
         ))}
+      </div>
 
-      <div className="my-profile-section">
+      <div className="my-profile-mission-section">
         <h2>My Missions</h2>
-        <div className="myprofile-cont">
-          {reservedMissions.length > 0 && reservedMissions.map((mission) => (
-            <div key={mission.mission_id}>
-              <p>{mission.mission_name}</p>
-            </div>
-          ))}
-        </div>
+        {reservedMissions.length > 0 && reservedMissions.map((mission) => (
+          <div className="myprofile-cont" key={mission.missionId}>
+            <p className="profile-name">{mission.missionName}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
