@@ -3,6 +3,7 @@
   flex-direction: row;
   width: 95%;
   margin: auto;
+  padding: 1rem;
 }
 
 .Cont {
@@ -26,7 +27,7 @@ img {
   color: #7a2525;
 }
 
-.profile-name{
+.profile-name {
   border: 1px solid #a8a0a0;
   width: 40%;
   height: 60px;
@@ -34,50 +35,53 @@ img {
   font-weight: bold;
   padding: 1rem;
 }
-.rocket-cont{
+
+.rocket-cont {
   display: flex;
   flex-direction: row;
   width: 90%;
   margin: 2rem auto;
   gap: 2rem;
- 
-
- 
 }
 
-.flicker-img{
-  height:250px;
-  width:250px;
+.flicker-img {
+  height: 250px;
+  width: 250px;
   margin-bottom: 20px;
   border-radius: 10px;
- 
 }
 
-.info{
-
-}
 .name {
   font-size: 2em;
   font-weight: bold;
   margin: 0.5rem;
 }
+
 .description {
   font-size: 1.5em;
   margin: 0.5rem;
   font-family: 'Roboto Flex', sans-serif;
 }
 
-.reserve{
- cursor: pointer;
-  color: white;
+.btn {
+  cursor: pointer;
   font-size: 1.5em;
   font-weight: bold;
-  background-color: blue;
   border-radius: 5px;
-  width: 23%;
-  height: 25px;
   padding: 10px;
   text-align: center;
+}
+
+.cancel-reserve {
+  color: white;
+  background-color: blue;
+  border: none;
+}
+
+.reserve {
+  color: rgb(54, 53, 53);
+  background-color: white;
+  border: 2px solid rgb(54, 53, 53);
 }
 
 .badge {
@@ -90,55 +94,7 @@ img {
   margin-right: 10px;
 }
 
-.nav-item 
-{
+.nav-item {
   text-decoration: none;
   font-size: 1.5em;
-}
-
-@-webkit-keyframes STAR-MOVE {
-	from {
-		left: 0;
-		top: 0;
-	}
-	to { 
-		left: -10000px;
-		top: -2000px;
-	}
-}
-
-.background {
-	background: black url(../images/background.png) repeat 5% 5%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 100;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 200s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-}
-
-.midground {
-	background: url(../images/midground.png) repeat 20% 20%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 200;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 150s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-}
-
-.foreground {
-	background: url(../images/foreground.png) repeat 35% 35%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 300;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 100s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
 }

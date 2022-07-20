@@ -24,15 +24,16 @@ const missions = createSlice({
         if (mission.mission_id !== action.payload) return mission;
         return { ...mission, joined: true };
       });
-
-      state.items = newState;
+      const thestate = state;
+      thestate.items = newState;
     },
     LEAVE_MISSION(state, action) {
       const newState = state.items.map((mission) => {
         if (mission.mission_id !== action.payload) return mission;
         return { ...mission, joined: false };
       });
-      state.items = newState;
+      const thestate = state;
+      thestate.items = newState;
     },
   },
   extraReducers: {

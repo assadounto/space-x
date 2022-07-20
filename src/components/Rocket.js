@@ -4,14 +4,14 @@ import { RESERVE, CANCEL } from '../redux/rockets/rockets';
 
 function Rocket(props) {
   const {
-    rocket_name, id, description, flickr_images, reserved,
+    rocketName, id, description, flickrImages, reserved,
   } = props;
   const dispatch = useDispatch();
   Rocket.propTypes = {
     id: PropTypes.number.isRequired,
-    rocket_name: PropTypes.string.isRequired,
+    rocketName: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    flickr_images: PropTypes.array.isRequired,
+    flickrImages: PropTypes.arrayOf(PropTypes.string).isRequired,
     reserved: PropTypes.bool.isRequired,
   };
 
@@ -24,16 +24,18 @@ function Rocket(props) {
 
   return (
     <div className="rocket-cont" key={id}>
-        <img src={flickr_images[1]} alt={rocket_name} className='flicker-img'></img>
-        <div className='info'>
-            <div className='name'>{rocket_name}</div>
-            <div className='description'>{ 
-              reserved && <div className='badge'>Reserved</div>
+      <img src={flickrImages[1]} alt={rocketName} className="flicker-img" />
+      <div className="info">
+        <div className="name">{rocketName}</div>
+        <div className="description">
+          {
+              reserved && <div className="badge">Reserved</div>
             }
-              {description}</div>
-              {reserved ? <div className='reserve' onClick={handleCancel}>Cancel Reservation</div> : <div className='reserve' onClick={handleclick}>Reserve Rocket</div>}
+          {description}
         </div>
-        
+        {reserved ? <button type="submit" className="reserve btn" onClick={handleCancel}>Cancel Reservation</button> : <button type="submit" className="cancel-reserve btn" onClick={handleclick}>Reserve Rocket</button>}
+      </div>
+
     </div>
   );
 }

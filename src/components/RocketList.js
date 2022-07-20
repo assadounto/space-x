@@ -10,8 +10,7 @@ const Rockets = () => {
     if (rocket.items.length === 0) {
       dispatch(getRockets());
     }
-    ;
-  },);
+  });
   return (
     <div className="cont1">
       <div className="rockets">
@@ -25,14 +24,14 @@ const Rockets = () => {
                   ? <div>Loading...</div>
 
                   : rocket.items.map(({
-                    rocket_name, id, description, flickr_images, reserved,
+                    rocketName, id, description, flickrImages, reserved,
                   }) => (
                     <Rocket
                       key={id}
                       id={id}
                       description={description}
-                      flickr_images={flickr_images}
-                      rocket_name={rocket_name}
+                      flickrImages={flickrImages}
+                      rocketName={rocketName}
                       reserved={reserved}
                     />
                   ))

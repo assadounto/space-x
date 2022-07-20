@@ -11,8 +11,8 @@
   max-height: 3rem;
 }
 
-.box-1, .box-2, .box-3 {
+.box-1,
+.box-2,
+.box-3 {
   border-right: 1px solid #d8d8d8;
 }
-
-
