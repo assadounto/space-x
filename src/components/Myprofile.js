@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux/es/exports';
+import { NavLink } from 'react-router-dom';
 
 const Myprofile = () => {
   const user = useSelector((state) => state.rockets);
@@ -9,14 +10,24 @@ const Myprofile = () => {
   return (
     <div className="myprofile">
       <h2>My Rockets</h2>
-      { myprofile.map(({
-        rocketName, id,
-      }) => (
-        <div className="myprofile-cont" key={id}>
-
-          <div className="profile-name">{rocketName}</div>
+      {myprofile.length === 0 ? (
+        <div className="Info">
+          You have no Reserved Rockets.
+          To Reserve a rocket click
+          {' '}
+          <NavLink to="/">here</NavLink>
+          {' '}
+          and check back here.
         </div>
-      ))}
+      )
+        : myprofile.map(({
+          rocketName, id,
+        }) => (
+          <div className="myprofile-cont" key={id}>
+
+            <div className="profile-name">{rocketName}</div>
+          </div>
+        ))}
 
       <div className="my-profile-section">
         <h2>My Missions</h2>

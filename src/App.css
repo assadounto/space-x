@@ -98,3 +98,9 @@ img {
   text-decoration: none;
   font-size: 1.5em;
 }
+
+.Info {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.5rem;
+}
