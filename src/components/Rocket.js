@@ -31,11 +31,12 @@ function Rocket(props) {
         <div className='info'>
             <div className='name'>{rocket_name}</div>
             <div className='description'>{ 
-              reserved && <div>Reserved</div>
+              reserved && <div className='badge'>Reserved</div>
             }
               {description}</div>
+              {reserved ? <div className='reserve' onClick={handleCancel}>Cancel Reservation</div> : <div className='reserve' onClick={handleclick}>Reserve Rocket</div>}
         </div>
-        {reserved ? <div className='reserved' onClick={handleCancel}>Cancel reserve</div> : <div className='reserve' onClick={handleclick}>Reserve</div>}
+        
     </div>
   );
 }

@@ -4,17 +4,16 @@ import {NavLink,Link} from 'react-router-dom'
 import logo from'../../src/planet.png'
 function Header(){
     return (
-        <nav className="header">
+        <><nav className="header">
             <div><img src={logo} alt="Logo" /></div>
             <div className="navbar-brand" href="spacebar">Space Travelers' Hub</div>
             <div className='Cont'>
-            <NavLink to='/' href="spacebar/rockets"	style={({ isActive }) => 
-                      (isActive ? {color: 'red'} : {color: 'blue'})}
-	>Rockets</NavLink>
-            <Link to='/misions' className="Missions" href="#">Missions</Link>
-            <Link to='/my-profiles' className="My-Profile" href="">My Profile</Link>
+                <NavLink to='/' className="nav-item" style={({ isActive }) => (isActive ? { color: 'red' } : { color: 'blue' })}
+                >Rockets</NavLink>
+                <Link to='/misions' className="nav-item" href="#">Missions</Link>
+                <Link to='/my-profiles' className="nav-item" href="">My Profile</Link>
             </div>
-            </nav>
+        </nav><hr /></>
     )
 }
 

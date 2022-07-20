@@ -4,6 +4,8 @@ import {Routes,Route} from 'react-router-dom'
 import bookService from './services/services'; 
 import Rockets from './components/RocketList';
 import Missions from './components/MissionList';
+import Myprofile from './components/Myprofile';
+
 function App() {
     return(
       <>
@@ -11,8 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Rockets />} />
           <Route path="/misions" element={<Missions />} />
-          <Route path="/my-profiles" element={<h1>My Profile</h1>} />
+          <Route path="/my-profiles" element={<Myprofile/>} />
         </Routes>
+        <div className='background'></div>
       </>
     )
 }
