@@ -27,10 +27,12 @@ To get a local copy up and running follow these simple example steps.
 - create new react app [Check this link to learn how](https://reactjs.org/docs/create-a-new-react-app.html)
 
 ## Setup
-- ```git clone git@github.com:assadounto/awesome-books.git```
--  ```cd awesome-books ```
--  ```npm install ```
--  ```npm start ```
+```javascript
+ git clone git@github.com:assadounto/awesome-books.git
+ cd awesome-books 
+ npm install 
+ npm start 
+```
 
 -Follow the HTML-CSS linter confuguration to docs to setup linters [Link to Microverse linter docs](https://github.com/microverseinc/linters-config)
 
@@ -40,18 +42,30 @@ To get a local copy up and running follow these simple example steps.
 For tracking linters errors locally, you need to follow these steps:
 - For tracking linter errors in HTML file run:
 
-1. ```npm install --save-dev hint@6.x```
-2. ```npx hint .```
+```javascript
+npm install --save-dev hint@6.x
+```
+```javascript
+npx hint .
+```
 
 - For tracking linter errors in CSS file run:
+```javascript
+npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+```
 
-1. ```npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x```
-2. ```npx stylelint "**/*.{css,scss}"```
+```javascript
+npx stylelint "**/*.{css,scss}"
+```
 
 - For tracking linter errors in Javascript and React file run:
 
-1. ```npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x```
-2. ```npx eslint .```
+```javascript
+npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+```
+```javascript
+npx eslint .
+```
 
 ## Deployment
 
@@ -62,17 +76,14 @@ For tracking linters errors locally, you need to follow these steps:
 
 👤 **Rich Adu**
 
-- GitHub: 
-    - [assadounto](https://www.github.com/assadounto)
-- Twitter:
-    - [@adukyerer](https://www.twitter.com/adukyerer)
+- GitHub: [assadounto](https://www.github.com/assadounto)
+- Twitter: [@adukyerer](https://www.twitter.com/adukyerer)
 
-👤 **Shubh Dev**
 
-- GitHub: 
-    - [Shubh Dev](https://www.github.com/assadounto)
-- Twitter:
-    - [@Shubh Dev](https://www.twitter.com/)
+👤 **Shubh M**
+
+- GitHub: [@Shubh-Dev](https://github.com/Shubh-Dev) 
+- LinkedIn: [LinkedIn](https://linkedin.com/in/shubh.scb)
 
 ## 🤝 Contributing
 
