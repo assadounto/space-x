@@ -30,7 +30,10 @@ function Rocket(props) {
         <img src={flickr_images[1]} alt={rocket_name} className='flicker-img'></img>
         <div className='info'>
             <div className='name'>{rocket_name}</div>
-            <div className='description'>{description}</div>
+            <div className='description'>{ 
+              reserved && <div>Reserved</div>
+            }
+              {description}</div>
         </div>
         {reserved ? <div className='reserved' onClick={handleCancel}>Cancel reserve</div> : <div className='reserve' onClick={handleclick}>Reserve</div>}
     </div>

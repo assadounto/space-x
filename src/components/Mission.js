@@ -8,7 +8,7 @@ const Mission = (props) => {
     const { mission_name, mission_id, description, joined } = props;
     const dispatch = useDispatch();
     Mission.propTypes = {
-        mission_id: PropTypes.number.isRequired,
+        mission_id: PropTypes.string.isRequired,
         mission_name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         joined: PropTypes.bool.isRequired,

@@ -18,3 +18,7 @@ img {
   font-weight: bold;
   margin: 0.5rem;
 }
+
+.navlink--active {
+  color: #7a2525;
+}
