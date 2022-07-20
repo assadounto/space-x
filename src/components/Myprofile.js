@@ -1,9 +1,6 @@
 import { useSelector } from 'react-redux/es/exports';
-<<<<<<< HEAD
 import { NavLink } from 'react-router-dom';
-=======
 import './MyProfile.css';
->>>>>>> 8265633233e70b4434783a2a3d90275f5468ca12
 
 const Myprofile = () => {
   const user = useSelector((state) => state.rockets);
@@ -15,23 +12,53 @@ const Myprofile = () => {
     <div className="myprofile">
       <div className="my-profile-rocket-section">
         <h2 className="rocket-profile-headline">My Rockets</h2>
-        { myprofile.map(({
-          rocketName, id,
-        }) => (
-          <div className="myprofile-cont" key={id}>
-
-            <div className="profile-name">{rocketName}</div>
+        { myprofile.length === 0 ? (
+          <div className="Info">
+            Ooops! You do not have any rockets yet.
+            Click
+            {' '}
+            <NavLink to="/">here</NavLink>
+            {' '}
+            to rerserve.
           </div>
-        ))}
+        )
+          : myprofile.map(({
+            rocketName, id, wikipedia,
+          }) => (
+            <div className="myprofile-cont" key={id}>
+
+              <div className="profile-name">
+                {rocketName}
+                <div className="link">
+                  More info about rocket
+                  {' '}
+                  <a href={wikipedia}>here</a>
+
+                </div>
+                {}
+              </div>
+
+            </div>
+          ))}
       </div>
 
       <div className="my-profile-mission-section">
         <h2>My Missions</h2>
-        {reservedMissions.length > 0 && reservedMissions.map((mission) => (
-          <div className="myprofile-cont" key={mission.missionId}>
-            <p className="profile-name">{mission.missionName}</p>
+        { reservedMissions.length === 0 ? (
+          <div className="Info">
+            Ooops! You have no book misions.
+            Click
+            {' '}
+            <NavLink to="/misions">here</NavLink>
+            {' '}
+            to book.
           </div>
-        ))}
+        )
+          : reservedMissions.length > 0 && reservedMissions.map((mission) => (
+            <div className="myprofile-cont" key={mission.missionId}>
+              <p className="profile-name">{mission.missionName}</p>
+            </div>
+          ))}
       </div>
     </div>
   );

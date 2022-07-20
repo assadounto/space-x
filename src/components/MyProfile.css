@@ -7,9 +7,12 @@
 
 .my-profile-rocket-section {
   width: 45%;
-  padding-top: 10px;
 }
 
 .my-profile-mission-section {
   width: 45%;
+}
+
+.rocket-profile-headline {
+  margin-bottom: 28px;
 }

@@ -44,6 +44,7 @@ const rockets = createSlice({
         description: key.description,
         flickrImages: key.flickr_images,
         reserved: false,
+        wikipedia: key.wikipedia,
       }));
       const thestate = state;
       thestate.isLoading = false;
