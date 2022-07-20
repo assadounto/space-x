@@ -8,8 +8,10 @@ const Missions = () => {
   const mission = useSelector((state) => state.missions);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMission());
-  }, [dispatch]);
+    if (mission.items.length === 0) {
+      dispatch(getMission());
+    }
+  });
   return (
     <div className="mission-container">
       <div className="headings">
@@ -33,7 +35,7 @@ const Missions = () => {
                   }) => (
                     <Mission
                       key={mission_id}
-                      id={mission_id}
+                      mission_id={mission_id}
                       description={description}
                       mission_name={mission_name}
                       joined={joined}

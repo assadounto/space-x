@@ -1,4 +1,7 @@
-.mission-content {
+/* .mission-content {
   display: flex;
-  margin-bottom: 20px;
+} */
+
+.box {
+  border: 1px solid #000;
 }

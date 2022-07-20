@@ -9,27 +9,31 @@ const Mission = (props) => {
   } = props;
   const dispatch = useDispatch();
   Mission.propTypes = {
-    mission_id: PropTypes.number.isRequired,
+    mission_id: PropTypes.string.isRequired,
     mission_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     joined: PropTypes.bool.isRequired,
   };
 
   const handleclick = () => {
-    dispatch(JOIN_MISSION({ mission_id }));
+    console.log(JOIN_MISSION(mission_id));
+    dispatch(JOIN_MISSION(mission_id));
   };
 
   const handleCancel = () => {
+    console.log(LEAVE_MISSION(mission_id));
     dispatch(LEAVE_MISSION(mission_id));
   };
 
   return (
-    <div className="mission-content" key={mission_id}>
-      <div className="mission-name">{mission_name}</div>
-      <div className="mission-description">{description}</div>
-      <div className="status-button">{joined ? <h5>Active Member</h5> : <h5>NOT A MEMBER</h5>}</div>
-      <div className="join-button">{joined ? <button type="button" className="joined" onClick={handleCancel}>Leave Mission</button> : <button type="button" className="join-mission" onClick={handleclick}>Join Mission</button>}</div>
-    </div>
+    <table className="mission-content" key={mission_id}>
+      <tr>
+        <td className="mission-name box">{mission_name}</td>
+        <td className="mission-description box">{description}</td>
+        <td className="status-button box">{joined ? <h5>Active Member</h5> : <h5>NOT A MEMBER</h5>}</td>
+        <td className="join-button box">{joined ? <button type="button" className="joined" onClick={handleCancel}>Leave Mission</button> : <button type="button" className="join-mission" onClick={handleclick}>Join Mission</button>}</td>
+      </tr>
+    </table>
   );
 };
 
