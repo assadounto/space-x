@@ -44,7 +44,7 @@ const missions = createSlice({
         mission_name: key.mission_name,
         mission_id: key.mission_id,
         description: key.description, 
-        joined:false 
+        joined:false
       }))
       const thestate = state;
       thestate.isLoading = false;
