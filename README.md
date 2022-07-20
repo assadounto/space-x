@@ -28,7 +28,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Setup
 ```javascript
- git clone git@github.com:assadounto/awesome-books.git
+ git clone git@github.com:assadounto/react-capstone.git
  cd awesome-books 
  npm install 
  npm start 
