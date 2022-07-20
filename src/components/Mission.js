@@ -27,12 +27,12 @@ const Mission = (props) => {
 
   return (
     <table className="mission-content" key={mission_id}>
-      <tr>
+        <tr>
         <td className="mission-name box">{mission_name}</td>
         <td className="mission-description box">{description}</td>
-        <td className="status-button box">{joined ? <h5>Active Member</h5> : <h5>NOT A MEMBER</h5>}</td>
-        <td className="join-button box">{joined ? <button type="button" className="joined" onClick={handleCancel}>Leave Mission</button> : <button type="button" className="join-mission" onClick={handleclick}>Join Mission</button>}</td>
-      </tr>
+        <td className="status-button box">{joined ? <h5 className="active-member-btn">Active Member</h5> : <h5 className="not-member-btn">NOT A MEMBER</h5>}</td>
+        <td className="join-button box">{joined ? <button type="button" className="leave-mission" onClick={handleCancel}>Leave Mission</button> : <button type="button" className="join-mission" onClick={handleclick}>Join Mission</button>}</td>
+        </tr>
     </table>
   );
 };

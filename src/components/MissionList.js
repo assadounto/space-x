@@ -15,9 +15,9 @@ const Missions = () => {
   return (
     <div className="mission-container">
       <div className="headings">
-        <div className="mission-name"><h3>Mission</h3></div>
-        <div className="mission-description"><h3>description</h3></div>
-        <div className="mission-status"><h3>status</h3></div>
+        <div className="mission-heading box-1"><h3>Mission</h3></div>
+        <div className="mission-description box-2"><h3>description</h3></div>
+        <div className="mission-status box-3"><h3>status</h3></div>
         <div className="mission-blank" />
       </div>
       <div className="mission-items">
