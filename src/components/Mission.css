@@ -1,4 +1,56 @@
-.mission-content {
-    display: flex;
-    margin-bottom: 20px;
+.box {
+  border: 1px solid rgb(170, 166, 166);
 }
+.mission-name  {
+  width: 118px;
+  height: auto;
+  text-align: justify;
+}
+
+.status-button {
+  width: 118px;
+  height: auto;
+  text-align: center;
+}
+
+.join-button {
+  width: 140px;
+  height: auto;
+  text-align: center;
+}
+
+.active-member-btn {
+  padding: 2px;
+  background-color: rgb(45, 204, 204);
+  border-radius: 5px;
+  color: white;
+}
+
+.not-member-btn {
+  padding: 4px;
+  background-color: rgb(170, 166, 166);
+  border-radius: 5px;
+  color: white;
+}
+
+.join-mission {
+  height: 30px;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.leave-mission {
+  height: 30px;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid red;
+  color: red;
+}
+
+table:nth-child(odd) {
+  background-color: rgba(203, 203, 199, 0.417);
+}
+
+
+
+

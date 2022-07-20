@@ -1,11 +1,18 @@
 .mission-container {
-    border: 1px solid #d8d8d8;
-
+  border: 1px solid #d8d8d8;
 }
 
 .headings {
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr 1fr;
-    border: 1px solid #d8d8d8;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: 114px auto 125px 135px;
+  border: 1px solid #d8d8d8;
+  border-bottom: none;
+  padding: 10px;
+  max-height: 3rem;
 }
+
+.box-1, .box-2, .box-3 {
+  border-right: 1px solid #d8d8d8;
+}
+
+
