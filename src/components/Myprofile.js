@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from 'react-redux/es/exports';
 import { NavLink } from 'react-router-dom';
 import './MyProfile.css';
@@ -35,7 +36,6 @@ const Myprofile = () => {
                   <a href={wikipedia}>here</a>
 
                 </div>
-                {}
               </div>
 
             </div>
