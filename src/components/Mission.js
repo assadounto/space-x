@@ -1,6 +1,5 @@
-/* eslint-disable camelcase */
 import { PropTypes } from 'prop-types';
-import { useDispatch } from 'react-redux/es/exports';
+import { useDispatch } from 'react-redux';
 import { JOIN_MISSION, LEAVE_MISSION } from '../redux/missions/missions';
 import './Mission.css';
 
