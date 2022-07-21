@@ -84,7 +84,7 @@ npx eslint .
 👤 **Shubh M**
 
 - GitHub: [@Shubh-Dev](https://github.com/Shubh-Dev) 
-- LinkedIn: [LinkedIn](https://linkedin.com/in/shubh.scb)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shubhscb/)
 
 ## 🤝 Contributing
 
