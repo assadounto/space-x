@@ -1,0 +1,18 @@
+.myprofile {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.my-profile-rocket-section {
+  width: 45%;
+}
+
+.my-profile-mission-section {
+  width: 45%;
+}
+
+.rocket-profile-headline {
+  margin-bottom: 28px;
+}

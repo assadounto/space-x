@@ -24,25 +24,27 @@ const rockets = createSlice({
         if (rocket.id !== action.payload) return rocket;
         return { ...rocket, reserved: true };
       });
-
-      state.items = newState;
+      const thestate = state;
+      thestate.items = newState;
     },
     CANCEL(state, action) {
       const newState = state.items.map((rocket) => {
         if (rocket.id !== action.payload) return rocket;
         return { ...rocket, reserved: false };
       });
-      state.items = newState;
+      const thestate = state;
+      thestate.items = newState;
     },
   },
   extraReducers: {
     [getRockets.fulfilled]: (state, action) => {
       const rockets = (action.payload).map((key) => ({
-        rocket_name: key.rocket_name,
+        rocketName: key.rocket_name,
         id: key.id,
         description: key.description,
-        flickr_images: key.flickr_images,
+        flickrImages: key.flickr_images,
         reserved: false,
+        wikipedia: key.wikipedia,
       }));
       const thestate = state;
       thestate.isLoading = false;
