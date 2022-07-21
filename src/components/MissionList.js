@@ -16,8 +16,8 @@ const Missions = () => {
     <div className="mission-container">
       <div className="headings">
         <div className="mission-heading box-1"><h3>Mission</h3></div>
-        <div className="mission-description-headline box-2"><h3>description</h3></div>
-        <div className="mission-status box-3"><h3>status</h3></div>
+        <div className="mission-description-headline box-2"><h3>Description</h3></div>
+        <div className="mission-status box-3"><h3>Status</h3></div>
         <div className="mission-blank box-3" />
       </div>
       <div className="mission-items">

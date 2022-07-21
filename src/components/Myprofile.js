@@ -46,7 +46,7 @@ const Myprofile = () => {
         <h2>My Missions</h2>
         { reservedMissions.length === 0 ? (
           <div className="Info">
-            Ooops! You have no book misions.
+            Ooops! You have no book missions.
             Click
             {' '}
             <NavLink to="/misions">here</NavLink>
