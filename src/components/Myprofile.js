@@ -56,7 +56,7 @@ const Myprofile = () => {
         )
           : reservedMissions.length > 0 && reservedMissions.map((mission) => (
             <div className="myprofile-cont" key={mission.missionId}>
-              <p className="profile-name">{mission.missionName}</p>
+              <div className="profile-name">{mission.missionName}</div>
             </div>
           ))}
       </div>
