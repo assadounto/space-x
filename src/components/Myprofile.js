@@ -54,11 +54,19 @@ const Myprofile = () => {
             to book.
           </div>
         )
-          : reservedMissions.length > 0 && reservedMissions.map((mission) => (
-            <div className="myprofile-cont" key={mission.missionId}>
-              <div className="profile-name">{mission.missionName}</div>
-            </div>
-          ))}
+          : reservedMissions.length > 0 && reservedMissions
+            .map(({ missionName, missionId, wikipedia }) => (
+              <div className="myprofile-cont" key={missionId}>
+                <div className="profile-name">
+                  {missionName}
+                  <div className="link">
+                    More info about rocket
+                    {' '}
+                    <a href={wikipedia}>here</a>
+                  </div>
+                </div>
+              </div>
+            ))}
       </div>
     </div>
   );
