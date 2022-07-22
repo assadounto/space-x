@@ -43,6 +43,7 @@ const missions = createSlice({
         missionId: key.mission_id,
         description: key.description,
         joined: false,
+        wikipedia: key.wikipedia,
       }));
       const thestate = state;
       thestate.isLoading = false;
